@@ -17,6 +17,17 @@ def get_user(user_id):
   
   return jsonify(user_data), 200
 
+@app.route("/get-department/<department_id>")
+def get_department(department_id):
+  department_data = {
+    "department_id": department_id,
+    "name": "Engineering",
+    "building": "Alpha",
+    "office": "509"
+  }
+  
+  return jsonify(department_data), 200
+
 @app.route("/create-user", methods=["POST"])
 def create_user():
   data = request.get_json()
